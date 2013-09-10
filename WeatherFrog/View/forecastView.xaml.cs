@@ -15,6 +15,8 @@ namespace WeatherFrog.View
         public forecastView()
         {
             InitializeComponent();
+            this.DataContext = ViewModelNamespace.ViewModel.getInstance();
+            icn.Source = ";";
         }
     }
 }

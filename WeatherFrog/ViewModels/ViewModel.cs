@@ -3,11 +3,13 @@ using System.Windows;
 using System.Collections.ObjectModel;
 using System.IO.IsolatedStorage;
 using WeatherFrog.Model;
+using System.ComponentModel;
 
 
 namespace WeatherFrog.ViewModelNamespace
 {
-    public class ViewModel
+    public class ViewModel:INotifyPropertyChanged
+
     {
         public ObservableCollection<Station> stations { get; set; }
 
@@ -55,5 +57,29 @@ namespace WeatherFrog.ViewModelNamespace
             stations = a;
             //MessageBox.Show("Got accomplishments from storage");
         }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void RaisePropertyChanged(string propertyName)
+        {
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        private Station _currentStation;
+        public Station currentStation
+        {
+            get { return _currentStation; }
+            set
+            {
+                if (value != _currentStation)
+                {
+                    _currentStation = value;
+                    this.RaisePropertyChanged("currentStation");
+                }
+            }
+        }
+        
+
     }
 }

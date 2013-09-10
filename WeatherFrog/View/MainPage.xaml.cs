@@ -143,8 +143,8 @@ namespace WeatherFrog.View
 
     private void Pivot_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-
-      //  fadeOut.Begin();
+        vm.currentStation = vm.stations.ElementAt<Station>(mainPivot.SelectedIndex);
+        fadeOut.Begin();
 
         
 
