@@ -102,6 +102,12 @@
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="StateUtilities.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="View\DetailsView.xaml.cs">
+      <DependentUpon>DetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ForecastDetailPage.xaml.cs">
+      <DependentUpon>ForecastDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\forecastView.xaml.cs">
       <DependentUpon>forecastView.xaml</DependentUpon>
     </Compile>
@@ -123,6 +129,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="View\DetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ForecastDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\forecastView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

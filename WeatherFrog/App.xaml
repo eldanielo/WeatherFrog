@@ -7,6 +7,16 @@
 
     <!--Application Resources-->
     <Application.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="23"/>
+            <Setter Property="FontFamily" Value="Yu Gothic"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style TargetType="Canvas">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Opacity" Value="0.5"/>
+           
+        </Style>
         <local:LocalizedStrings xmlns:local="clr-namespace:WeatherFrog" x:Key="LocalizedStrings"/>
     </Application.Resources>
 

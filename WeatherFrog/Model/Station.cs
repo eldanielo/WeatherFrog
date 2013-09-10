@@ -136,7 +136,9 @@ namespace WeatherFrog.Model
             }
         }
 
-        public String ToString() {
+
+        public override String ToString()
+        {
             return name + "  " + lat + " " + lon;
         }
         public Station GetCopy()

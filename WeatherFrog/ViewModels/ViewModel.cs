@@ -29,8 +29,13 @@ namespace WeatherFrog.ViewModelNamespace
 
         public void GetAccomplishments()
         {
-            if(stations == null)
+            if (stations == null)
+            {
                 stations = new ObservableCollection<Station>();
+                Station station = new Station { lat = "48.2083", lon = "16.3731" };
+                stations.Add(station);
+                ForecastService.getInstance().getForecast(station);
+            }
         }
 
 

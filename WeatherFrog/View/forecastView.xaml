@@ -12,27 +12,44 @@
     <UserControl.Resources>
         <src:DateConverter x:Key="dateConverter"></src:DateConverter>
         <src:IconConverter x:Key="iconConverter"></src:IconConverter>
-     </UserControl.Resources>
-    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
-     
-        <ListBox DataContext="{Binding currentStation}"  ItemsSource="{Binding forecast.daily.data}">
+
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="23"/>
+            <Setter Property="FontFamily" Value="Yu Gothic"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="Transparent" >
+        <Canvas Background="Black"  Opacity="0.1"></Canvas>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Forecast" HorizontalAlignment="Left" VerticalAlignment="Center" ></TextBlock>
+        <Rectangle Opacity ="1" Fill="White" Height="1" VerticalAlignment="Bottom" />
+
+        <ListBox x:Name="forecastListBox" SelectionChanged="ListboxSelectionChanged" Grid.Row="1" DataContext="{Binding currentStation}"  ItemsSource="{Binding forecast.daily.data}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock TextWrapping="Wrap" Text="{Binding Path=time, Converter={StaticResource dateConverter}}" Grid.Column="0"/>
+                        <TextBlock Style="{StaticResource TextBlockStyle}" TextWrapping="Wrap" Text="{Binding Path=time, Converter={StaticResource dateConverter}}" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         <Image Source="{Binding Path=icon, Converter={StaticResource iconConverter}}" Grid.Column="1"  ></Image>
-                        <TextBlock   Grid.Column="2" Text="{Binding Path=temperatureMax}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                        <TextBlock   Grid.Column="3" Text="{Binding Path=temperatureMin}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3D74C3"></TextBlock>
+                        <TextBlock   Style="{StaticResource TextBlockStyle}" Grid.Column="2" Text="{Binding Path=temperatureMax}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock   Style="{StaticResource TextBlockStyle}"  Grid.Column="3" Text="{Binding Path=temperatureMin}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3D74C3"></TextBlock>
+                        <Rectangle Opacity ="0.5" Fill="White" HorizontalAlignment="Left" Height="1" VerticalAlignment="Bottom" Width="460" Grid.ColumnSpan="4"/>
 
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        </Grid>
         </Grid>
 </UserControl>

@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="WeatherFrog.View.DetailsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="300" d:DesignWidth="480"
+    xmlns:src="clr-namespace:WeatherFrog.View">
+    <UserControl.Resources>
+        <src:DateConverter x:Key="dateConverter"></src:DateConverter>
+        <src:IconConverter x:Key="iconConverter"></src:IconConverter>
+
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="23"/>
+            <Setter Property="FontFamily" Value="Yu Gothic"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding currentStation}"  >
+        <Canvas></Canvas>
+        <Grid>
+        
+           <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="51*"/>
+                <ColumnDefinition Width="101*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition />
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+
+            <Image Source="{Binding Path=forecast.currently.icon, Converter={StaticResource iconConverter}}" Grid.Row="1" Grid.RowSpan="4"  />
+
+
+            <TextBlock x:Name="headerText" Text="Details"   Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   Width="91"  />
+            <Rectangle Opacity ="1" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="2" />
+
+            <TextBlock Text="Feels Like"   Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+            <TextBlock Name="feelsLikeText"   Text="{Binding Path=forecast.currently.apparentTemperature}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+            <Rectangle Opacity ="0.5" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="2" Grid.Column="1" />
+
+            <TextBlock Text="Humidity"   Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBlock Name="humidityText"    Text="{Binding Path=forecast.currently.humidity}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+            <Rectangle Opacity ="0.5" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="3" Grid.Column="1" />
+
+            <TextBlock Text="Visibility"   Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBlock Name="visibilityText"    Text="{Binding Path=forecast.currently.visibility}"  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,10,0,9" Width="84"/>
+            <Rectangle Opacity ="0.5" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="4" Grid.Column="1" />
+
+            <TextBlock Text="UV Index"   Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBlock Name="uvIndexText"   Text="{Binding Path=forecast.currently.ozone}"  Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+
+            <Rectangle Opacity ="0.5" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="5" Grid.ColumnSpan="2" />
+
+
+
+      
+    </Grid>
+        </Grid>
+</UserControl>

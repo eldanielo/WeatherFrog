@@ -28,7 +28,6 @@ namespace WeatherFrog.View
            
             googlePlacesService = GooglePlacesService.getInstance();
             locations = new ObservableCollection<Prediction>();
-            locations = new ObservableCollection<Prediction>();
             locations.Add(new Prediction());
             this.DataContext = this;
         }
@@ -50,7 +49,7 @@ namespace WeatherFrog.View
         Prediction p;
         private void locationSelected(object sender, SelectionChangedEventArgs e)
         {
-           p = (((LongListSelector)sender).SelectedItem) as Prediction;
+           p = (((ListBox)sender).SelectedItem) as Prediction;
             googlePlacesService.getDetail(p.reference);
             googlePlacesService.gotPlaceDetail += new GooglePlacesService.GotPlaceDetail(addStation);
    

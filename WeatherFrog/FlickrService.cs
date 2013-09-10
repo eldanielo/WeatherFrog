@@ -149,6 +149,13 @@ namespace WeatherFrog
                 Random rnd = new Random();
                 int r = rnd.Next(urls.Count);
                 station.picUrl = (string)urls[0];
+                Debug.WriteLine("setting BackDrop");
+
+                ImageBrush imgbrush = new ImageBrush();
+                imgbrush.ImageSource = new BitmapImage(new Uri(station.picUrl));
+                imgbrush.Stretch = Stretch.UniformToFill;
+                station.backDropImg = imgbrush;
+                updateBg();
               //   gotImgURL((string)urls[r], station);
               //  imageService.DownloadImagefromServer((string)urls[r], station);
                    
@@ -193,7 +200,7 @@ namespace WeatherFrog
 
         public event UpdateBg updateBg;
 
-        private async  void  setBackDropUrl(string url, Station station)
+        private void  setBackDropUrl(string url, Station station)
         {
 
      
