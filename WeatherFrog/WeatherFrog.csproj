@@ -157,6 +157,14 @@
     </Content>
     <Resource Include="Assets\testimg.jpg" />
     <Content Include="README_FIRST.txt" />
+    <Content Include="Resources\Icons\cloudy.png" />
+    <Content Include="Resources\Icons\haze.png" />
+    <Content Include="Resources\Icons\partly_cloudy.png" />
+    <Content Include="Resources\Icons\rain.png" />
+    <Content Include="Resources\Icons\slight Drizzle.png" />
+    <Content Include="Resources\Icons\snow.png" />
+    <Content Include="Resources\Icons\sunny.png" />
+    <Content Include="Resources\Icons\thunderstorms.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />

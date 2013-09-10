@@ -7,9 +7,14 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    d:DesignHeight="320" d:DesignWidth="480">
-
+    d:DesignHeight="320" d:DesignWidth="480"
+    xmlns:src="clr-namespace:WeatherFrog.View">
+    <UserControl.Resources>
+        <src:DateConverter x:Key="dateConverter"></src:DateConverter>
+        <src:IconConverter x:Key="iconConverter"></src:IconConverter>
+     </UserControl.Resources>
     <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
+     
         <ListBox DataContext="{Binding currentStation}"  ItemsSource="{Binding forecast.daily.data}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -20,8 +25,8 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock TextWrapping="Wrap" Text="{Binding Path=time}" Grid.Column="0"/>
-                        <Image  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="22,4,22,33" Width="33" ></Image>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding Path=time, Converter={StaticResource dateConverter}}" Grid.Column="0"/>
+                        <Image Source="{Binding Path=icon, Converter={StaticResource iconConverter}}" Grid.Column="1"  ></Image>
                         <TextBlock   Grid.Column="2" Text="{Binding Path=temperatureMax}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                         <TextBlock   Grid.Column="3" Text="{Binding Path=temperatureMin}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3D74C3"></TextBlock>
 
@@ -29,5 +34,5 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-    </Grid>
+        </Grid>
 </UserControl>

@@ -7,6 +7,8 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Windows.Data;
+using System.Globalization;
 
 namespace WeatherFrog.View
 {
@@ -16,7 +18,33 @@ namespace WeatherFrog.View
         {
             InitializeComponent();
             this.DataContext = ViewModelNamespace.ViewModel.getInstance();
-            icn.Source = ";";
+            
         }
+    }
+
+    public class DateConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return ConverterService.getInstance().unixToDate(double.Parse(value.ToString())).DayOfWeek;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return "bla";
+        }
+    }
+    public class IconConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return "/Resources/Icons/" + ConverterService.getInstance().iconConvert(value.ToString());
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return "bla";
+        }
+
+       
     }
 }
