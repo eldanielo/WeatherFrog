@@ -102,6 +102,9 @@
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="StateUtilities.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="View\CurrentView.xaml.cs">
+      <DependentUpon>CurrentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DetailsView.xaml.cs">
       <DependentUpon>DetailsView.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="View\CurrentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DetailsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

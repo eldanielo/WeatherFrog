@@ -13,12 +13,6 @@
         <src:DateConverter x:Key="dateConverter"></src:DateConverter>
         <src:IconConverter x:Key="iconConverter"></src:IconConverter>
 
-        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="23"/>
-            <Setter Property="FontFamily" Value="Yu Gothic"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
-        </Style>
-
     </UserControl.Resources>
     <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding currentStation}"  >
         <Canvas></Canvas>

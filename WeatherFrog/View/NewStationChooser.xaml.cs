@@ -18,15 +18,15 @@ namespace WeatherFrog.View
     public partial class NewStationChooser : PhoneApplicationPage
     {
         public ObservableCollection<Prediction> locations { get; set; }
-      
-        private GooglePlacesService googlePlacesService;
+
+        private GooglePlacesService googlePlacesService = GooglePlacesService.getInstance();
         ForecastService forecastService = ForecastService.getInstance();
         ViewModel vm = ViewModel.getInstance();
         public NewStationChooser()
         {
             InitializeComponent();
            
-            googlePlacesService = GooglePlacesService.getInstance();
+           
             locations = new ObservableCollection<Prediction>();
             locations.Add(new Prediction());
             this.DataContext = this;

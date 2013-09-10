@@ -21,12 +21,7 @@
         <System:Double x:Key="windowOpacity">0.3</System:Double>
 
 
-        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="23"/>
-            <Setter Property="FontFamily" Value="Yu Gothic"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
-        </Style>
-
+      
         <Storyboard x:Name="fadeOut">
 
             <DoubleAnimation Duration="0:0:0.5"
@@ -66,23 +61,23 @@
                 <Image Source="Resources/Icons/cloudy.png" Grid.Row="1" Grid.RowSpan="4"  />
 
 
-                <TextBlock x:Name="headerText" Text="Details" Style="{StaticResource TextBlockStyle}"  Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   Width="91"  />
+                <TextBlock x:Name="headerText" Text="Details"   Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   Width="91"  />
                 <Rectangle Opacity ="1" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="2" />
 
-                <TextBlock Text="Feels Like"  Style="{StaticResource TextBlockStyle}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
-                <TextBlock Name="feelsLikeText"  Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+                <TextBlock Text="Feels Like"   Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+                <TextBlock Name="feelsLikeText"   Text="18" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
                 <Rectangle Opacity ="0.5" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="2" Grid.Column="1" />
 
-                <TextBlock Text="Humidity"  Style="{StaticResource TextBlockStyle}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="27" Margin="0,14,0,13" Width="97"/>
-                <TextBlock Name="humidityText"  Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+                <TextBlock Text="Humidity"   Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="27" Margin="0,14,0,13" Width="97"/>
+                <TextBlock Name="humidityText"   Text="18" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
                 <Rectangle Opacity ="0.5" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="3" Grid.Column="1" />
 
-                <TextBlock Text="Visibility"  Style="{StaticResource TextBlockStyle}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
-                <TextBlock Name="visibilityText"  Style="{StaticResource TextBlockStyle}"  Text="18" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+                <TextBlock Text="Visibility"   Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+                <TextBlock Name="visibilityText"    Text="18" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
                 <Rectangle Opacity ="0.5" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="4" Grid.Column="1" />
 
-                <TextBlock Text="UV Index"  Style="{StaticResource TextBlockStyle}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
-                <TextBlock Name="uvIndexText"  Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+                <TextBlock Text="UV Index"   Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+                <TextBlock Name="uvIndexText"   Text="18" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
 
                 <Rectangle Opacity ="0.5" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="5" Grid.ColumnSpan="2" />
 
@@ -108,14 +103,14 @@
                 <Image Source="Resources/Icons/cloudy.png" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" />
 
 
-                <TextBlock x:Name="headerText" Text="Wind and Pressure" Style="{StaticResource TextBlockStyle}" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
+                <TextBlock x:Name="headerText" Text="Wind and Pressure"  Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
                 <Rectangle Opacity ="1" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="2" />
 
-                <TextBlock Text="Wind"  Style="{StaticResource TextBlockStyle}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                <TextBlock Text="Wind"   Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock  Text="18" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
 
-                <TextBlock Text="Barometer"  Style="{StaticResource TextBlockStyle}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                <TextBlock Text="Barometer"   Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock  Text="18" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
 
 
             </Grid>
@@ -135,7 +130,7 @@
 
 
 
-                <TextBlock x:Name="headerText" Text="sun and moon" Style="{StaticResource TextBlockStyle}" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
+                <TextBlock x:Name="headerText" Text="sun and moon"  Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
 
 
             </Grid>
@@ -183,7 +178,7 @@
 
                 </Grid.RowDefinitions>
 
-                <TextBlock x:Name="headerText" Text="perception" Style="{StaticResource TextBlockStyle}" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
+                <TextBlock x:Name="headerText" Text="perception"  Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
                 <Rectangle Opacity="1" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="4" />
 
                 <Image Source="Resources/Icons/rain.png" Grid.Row="2" Grid.Column="0"  />
@@ -196,15 +191,15 @@
                 <Rectangle Opacity="{StaticResource seperatorOpacity}" Fill="White" Width="1" VerticalAlignment="Stretch"  Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Left" />
                 <Rectangle Opacity="{StaticResource seperatorOpacity}" Fill="White" Width="1" VerticalAlignment="Stretch"  Grid.Row="2" Grid.Column="3"  HorizontalAlignment="Left" />
 
-                <TextBlock Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <TextBlock Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <TextBlock Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <TextBlock Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock  Text="18" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock  Text="18" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock  Text="18" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock  Text="18" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-                <TextBlock Style="{StaticResource TextBlockStyle}" Text="morning" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <TextBlock Style="{StaticResource TextBlockStyle}" Text="morning" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <TextBlock Style="{StaticResource TextBlockStyle}" Text="morning" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <TextBlock Style="{StaticResource TextBlockStyle}" Text="morning" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock  Text="morning" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock  Text="morning" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock  Text="morning" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock  Text="morning" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
 
 
@@ -276,24 +271,9 @@
 
 
                             <!-- mainwindow -->
-                            <Grid Background="Black" Opacity="{StaticResource windowOpacity}" Height="250" VerticalAlignment="Top"  >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="5*"></ColumnDefinition>
-                                    <ColumnDefinition Width="19*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="50"/>
-                                    <RowDefinition></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <TextBlock HorizontalAlignment="Left" Grid.Column="1" TextWrapping="Wrap" Text="cloudy" VerticalAlignment="Top" FontSize="30" FontFamily="Yu Gothic" Height="53" Width="89" Grid.Row="1"/>
-                                <TextBlock Grid.Row="1" Grid.ColumnSpan="2" TextWrapping="Wrap" FontSize="160" FontFamily="Yu Gothic">
-                    	        <Run Text="{Binding Path=forecast.currently.temperature}" />
-                    	        <Run Text="°"/>
-                                </TextBlock>
-                            </Grid>
-                            
-                            
-                            
+                            <views:CurrentView x:Name="currentView"  Height="300" VerticalAlignment="Bottom" />
+
+
                             <!-- forecastwindow -->
                             <views:forecastView Height="320" x:Name="forecastView" Grid.Row="2" />
     
@@ -318,14 +298,14 @@
                                 <Image Source="Resources/Icons/cloudy.png" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" />
 
 
-                                <TextBlock Text="Wind and Pressure" Style="{StaticResource TextBlockStyle}" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
+                                <TextBlock Text="Wind and Pressure"  Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
                                 <Rectangle Opacity ="1" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="2" />
 
-                                <TextBlock Text="Wind"  Style="{StaticResource TextBlockStyle}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                <TextBlock Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                <TextBlock Text="Wind"   Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock  Text="18" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
 
-                                <TextBlock Text="Barometer"  Style="{StaticResource TextBlockStyle}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                <TextBlock Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                <TextBlock Text="Barometer"   Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock  Text="18" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
 
 
                             </Grid>
@@ -347,7 +327,7 @@
 
                                 </Grid.RowDefinitions>
 
-                                <TextBlock Text="perception" Style="{StaticResource TextBlockStyle}" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
+                                <TextBlock Text="perception"  Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
                                 <Rectangle Opacity="1" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="4" />
 
                                 <Image Source="Resources/Icons/rain.png" Grid.Row="2" Grid.Column="0"  />
@@ -360,15 +340,15 @@
                                 <Rectangle Opacity="{StaticResource seperatorOpacity}" Fill="White" Width="1" VerticalAlignment="Stretch"  Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Left" />
                                 <Rectangle Opacity="{StaticResource seperatorOpacity}" Fill="White" Width="1" VerticalAlignment="Stretch"  Grid.Row="2" Grid.Column="3"  HorizontalAlignment="Left" />
 
-                                <TextBlock Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <TextBlock Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <TextBlock Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <TextBlock Style="{StaticResource TextBlockStyle}" Text="18" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <TextBlock  Text="18" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <TextBlock  Text="18" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <TextBlock  Text="18" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <TextBlock  Text="18" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-                                <TextBlock Style="{StaticResource TextBlockStyle}" Text="morning" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <TextBlock Style="{StaticResource TextBlockStyle}" Text="morning" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <TextBlock Style="{StaticResource TextBlockStyle}" Text="morning" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <TextBlock Style="{StaticResource TextBlockStyle}" Text="morning" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <TextBlock  Text="morning" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <TextBlock  Text="morning" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <TextBlock  Text="morning" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <TextBlock  Text="morning" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
 
 
@@ -387,7 +367,7 @@
 
 
 
-                                <TextBlock  Text="sun and moon" Style="{StaticResource TextBlockStyle}" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
+                                <TextBlock  Text="sun and moon"  Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
 
 
                             </Grid>
@@ -401,58 +381,8 @@
                     </ScrollViewer>
                 </DataTemplate>
             </phone:Pivot.ItemTemplate>
-            <!--
-
-            <phone:PivotItem>
-                <ScrollViewer  VerticalScrollBarVisibility="Visible">
-                    <Grid  Height="2200" VerticalAlignment="Top">
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition Height="50"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="50"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="50"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="50"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="50"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-
-
-                        </Grid.RowDefinitions>
-
-                        <ContentControl Grid.Row="0" Template="{StaticResource mainWindow}" VerticalAlignment="Bottom"></ContentControl>
-                        <ContentControl  Grid.Row="2" Template="{StaticResource forecastwindow}" VerticalAlignment="Top"></ContentControl>
-                        <ContentControl  Grid.Row="4" Template="{StaticResource detailsWindow}" VerticalAlignment="Top"></ContentControl>
-                        <ContentControl  Grid.Row="6" Template="{StaticResource windPressureWindow}" VerticalAlignment="Top"></ContentControl>
-                        <ContentControl  Grid.Row="8" Template="{StaticResource perceptionWindow}" VerticalAlignment="Top"></ContentControl>
-                        <ContentControl  Grid.Row="10" Template="{StaticResource sunMoonWindow}" VerticalAlignment="Top"></ContentControl>
-
-
-
-
-
-
-
-                    </Grid>
-                </ScrollViewer>
-            </phone:PivotItem>
-                -->
-
-            <!--Pivot item one-->
+          
         </phone:Pivot>
-        <!--  <Image HorizontalAlignment="Left" Height="0" Margin="-220,800,0,0" VerticalAlignment="Top" Width="15"/> -->
-
-
-        <!--Uncomment to see an alignment grid to help ensure your controls are
-            aligned on common boundaries.  The image has a top margin of -32px to
-            account for the System Tray. Set this to 0 (or remove the margin altogether)
-            if the System Tray is hidden.
-
-            Before shipping remove this XAML and the image itself.-->
-        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" IsHit
-        Visible="False" />-->
     </Grid>
 
     <phone:PhoneApplicationPage.ApplicationBar >
