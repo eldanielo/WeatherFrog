@@ -11,6 +11,7 @@ using Windows.Devices.Geolocation;
 using Newtonsoft.Json;
 using System.ComponentModel;
 using WeatherFrog.Model;
+using System.IO.IsolatedStorage;
 
 
 namespace WeatherFrog
@@ -118,7 +119,23 @@ namespace WeatherFrog
 
     public class Datum2
     {
-        public string time { get; set; }
+        private string _time;
+        public string time
+        {
+            get { return _time; }
+            set
+            {
+                if (value != _time)
+                {
+                    _time = value;
+                    dayOfWeek = ConverterService.getInstance().unixToDate(double.Parse(value.ToString())).DayOfWeek.ToString().Substring(0,2);
+        
+                }
+            }
+        }
+
+        public string dayOfWeek { get; set; }
+
         public string summary { get; set; }
         public string icon { get; set; }
         public int sunriseTime { get; set; }
@@ -128,9 +145,46 @@ namespace WeatherFrog
         public string precipIntensityMaxTime { get; set; }
         public string precipProbability { get; set; }
         public string precipType { get; set; }
-        public string temperatureMin { get; set; }
+
+
+        private string _temperatureMin;
+        public string temperatureMin
+        {
+            get { return _temperatureMin; }
+            set
+            {
+                if (value != _temperatureMin)
+                {
+                    _temperatureMin = value;
+                    temperatureMinCelsius = String.Format("{0:0.00}", (Double.Parse(value.ToString()) - 32) / 1.8) + "°C";
+                   
+                }
+            }
+        }
+
+        public string temperatureMinCelsius { get; set; }
+
+       
         public string temperatureMinTime { get; set; }
-        public string temperatureMax { get; set; }
+
+
+        private string _temperatureMax;
+        public string temperatureMax
+        {
+            get { return _temperatureMax; }
+            set
+            {
+                if (value != _temperatureMax)
+                {
+                    _temperatureMax = value;
+                    temperatureMaxCelsius = String.Format("{0:0.00}", (Double.Parse(value.ToString()) - 32) / 1.8) + "°C";
+
+                }
+            }
+        }
+        public string temperatureMaxCelsius;
+
+        
         public string temperatureMaxTime { get; set; }
         public string apparentTemperatureMin { get; set; }
         public string apparentTemperatureMinTime { get; set; }

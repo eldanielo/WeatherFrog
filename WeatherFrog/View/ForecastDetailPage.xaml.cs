@@ -7,6 +7,8 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Collections.ObjectModel;
+using System.IO.IsolatedStorage;
 
 namespace WeatherFrog.View
 {
@@ -15,8 +17,21 @@ namespace WeatherFrog.View
         public ForecastDetailPage()
         {
             InitializeComponent();
-            this.DataContext = ViewModelNamespace.ViewModel.getInstance();
           
+            
         }
+
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = ViewModelNamespace.ViewModel.getInstance();
+           /* if ((bool)IsolatedStorageSettings.ApplicationSettings["metricSetting"])
+            {
+                maxGraph.ValueMemberPath = "temperatureMaxCelsius";
+
+                minGraph.ValueMemberPath = "temperatureMinCelsius";
+            }*/
+        }
+
+
     }
 }

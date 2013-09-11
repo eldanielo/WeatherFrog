@@ -91,6 +91,7 @@ namespace WeatherFrog.View
         // Load data for the ViewModel Items
         private void updateBackGround() {
             //FadeCanvas.Opacity = 1;
+            /*
             Debug.WriteLine("updating background");
             if (vm.stations.Count != 0)
             {
@@ -101,6 +102,7 @@ namespace WeatherFrog.View
                 LayoutRoot.Background = imageBrush;
                     //.backDropImg;
             }
+             * */
             fadeIn.Begin();
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)

@@ -49,7 +49,9 @@ namespace WeatherFrog.View
         Prediction p;
         private void locationSelected(object sender, SelectionChangedEventArgs e)
         {
-           p = (((ListBox)sender).SelectedItem) as Prediction;
+             p = (((ListBox)sender).SelectedItem) as Prediction;
+             if (p == null)
+                 return;
             googlePlacesService.getDetail(p.reference);
             googlePlacesService.gotPlaceDetail += new GooglePlacesService.GotPlaceDetail(addStation);
    

@@ -210,7 +210,7 @@
     </phone:PhoneApplicationPage.Resources>
     <!--LayoutRoot is the root grid where all page content is placed-->
 
-    <Grid x:Name="LayoutRoot" Background="Transparent" >
+    <Grid x:Name="LayoutRoot" DataContext="{Binding currentStation}" Background="{Binding Path=backDropImg}" >
 
         <!-- LOCALIZATION NOTE:
             To localize the displayed strings copy their values to appropriately named
