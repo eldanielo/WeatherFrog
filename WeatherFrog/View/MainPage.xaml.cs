@@ -35,8 +35,7 @@ namespace WeatherFrog.View
         
             InitializeComponent();
 
-            this.DataContext = vm;
-            this.mainPivot.ItemsSource = vm.stations;
+        
               this.Loaded += new RoutedEventHandler(MainPage_Loaded);          
             flickrService = FlickrService.getInstance();
             locationService = LocationService.getInstance();
@@ -55,6 +54,8 @@ namespace WeatherFrog.View
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            this.DataContext = vm;
+            this.mainPivot.ItemsSource = vm.stations;
             Debug.WriteLine("mainpage loaded");
           
 
@@ -154,7 +155,7 @@ namespace WeatherFrog.View
 
     private void fadeOut_Completed(object sender, EventArgs e)
     {
-        LayoutRoot.Background = vm.stations.ElementAt<Station>(mainPivot.SelectedIndex).backDropImg;
+      //  LayoutRoot.Background = vm.stations.ElementAt<Station>(mainPivot.SelectedIndex).backDropImg;
         fadeIn.Begin();
     }
 

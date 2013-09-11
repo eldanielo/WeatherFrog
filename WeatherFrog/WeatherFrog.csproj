@@ -129,6 +129,9 @@
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Model\Station.cs" />
+    <Compile Include="View\WindPressureView.xaml.cs">
+      <DependentUpon>WindPressureView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -163,6 +166,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\WindPressureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="FlickrNet\FlickrNet.chm" />
@@ -184,6 +191,10 @@
     <Content Include="Resources\Icons\cloudy.png" />
     <Content Include="Resources\Icons\haze.png" />
     <Content Include="Resources\Icons\partly_cloudy.png" />
+    <Content Include="Resources\Icons\pinwheel_large.png" />
+    <Content Include="Resources\Icons\pinwheel_large_white.png" />
+    <Content Include="Resources\Icons\pinwheel_small.png" />
+    <Content Include="Resources\Icons\pinwheel_white.png" />
     <Content Include="Resources\Icons\rain.png" />
     <Content Include="Resources\Icons\slight Drizzle.png" />
     <Content Include="Resources\Icons\snow.png" />

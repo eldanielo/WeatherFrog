@@ -32,22 +32,19 @@ namespace WeatherFrog.ViewModelNamespace
             if (stations == null)
             {
                 stations = new ObservableCollection<Station>();
-                Station station = new Station { lat = "48.2083", lon = "16.3731" };
-                stations.Add(station);
-                ForecastService.getInstance().getForecast(station);
+              
             }
+            addTestStations();
+        }
+
+        public void addTestStations() {
+            Station station = new Station { lat = "48.2083", lon = "16.3731"  ,name="Vienna"};
+            stations.Add(station);
+            ForecastService.getInstance().getForecast(station);
         }
 
 
-        public void GetDefaultAccomplishments()
-        {
-            ObservableCollection<Station> a = new ObservableCollection<Station>();
-          
-            // Items to collect
-            a.Add(new Station() { lat = "33", lon = "45" });
-          
-        }
-
+    
 
         public void GetSavedStation()
         {
