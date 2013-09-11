@@ -28,7 +28,8 @@ namespace WeatherFrog.View
             seasionCB.IsChecked = (bool)settings["seasonSetting"];
             daytimeCB.IsChecked = (bool)settings["daytimeSetting"];
             weatherconditionCB.IsChecked = (bool)settings["weatherconditionSetting"];
-
+            metricRadio.IsChecked = (bool)settings["metricSetting"];
+            imperialRadio.IsChecked = !(bool)settings["metricSetting"];
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -41,6 +42,7 @@ namespace WeatherFrog.View
            settings["seasonSetting"] =  seasionCB.IsChecked ;
           settings["daytimeSetting"] =   daytimeCB.IsChecked;
            settings["weatherconditionSetting"] = weatherconditionCB.IsChecked ;
+           settings["metricSetting"] = metricRadio.IsChecked;
            if ((bool)locExactRadio.IsChecked) {
                settings["locSetting"] = "exact";
            }
@@ -50,6 +52,7 @@ namespace WeatherFrog.View
             if((bool)locWorldwideRadio.IsChecked){
                 settings["locSetting"] = "worldwide";
             }
+           
             
         }
     }

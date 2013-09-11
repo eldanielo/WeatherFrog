@@ -12,31 +12,42 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        
+        <phone:Pivot>
+            <phone:PivotItem Header="Image Settings">
+                <Grid x:Name="ContentPanel" >
+                    <RadioButton x:Name="locExactRadio" Content="exact Location" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadioButton_Checked" GroupName="locationRadio" IsChecked="True"/>
+                    <RadioButton x:Name="locWorldwideRadio" Content="worldwide" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,144,0,0" GroupName="locationRadio"/>
+                    <RadioButton x:Name="locApproxRadio" Content="approximate Location" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,72,0,0" GroupName="locationRadio"/>
+                    <CheckBox x:Name="seasionCB" Content="Season" HorizontalAlignment="Left" Margin="10,286,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.121,0.453" IsChecked="True"/>
+                    <CheckBox x:Name="weatherconditionCB" Content="Weathercondition" HorizontalAlignment="Left" Margin="10,399,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.121,0.453" IsChecked="True"/>
+                    <CheckBox x:Name="daytimeCB" Content="Daytime" HorizontalAlignment="Left" Margin="10,342,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.121,0.453" IsChecked="True"/>
+
+                </Grid>
+            </phone:PivotItem>
+            <phone:PivotItem Header=" Settings">
+                <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                        <RadioButton x:Name="metricRadio" Content="Metric" HorizontalAlignment="Center" GroupName="unitRadioGroup" VerticalAlignment="Center"></RadioButton>
+                        <RadioButton x:Name="imperialRadio" Content="Imperial" GroupName="unitRadioGroup"/>
+
+                    </StackPanel>
+                </StackPanel>
+            </phone:PivotItem>
+        </phone:Pivot>
+    
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+   
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="24,0,0,0">
-            <RadioButton x:Name="locExactRadio" Content="exact Location" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadioButton_Checked" GroupName="locationRadio" IsChecked="True"/>
-            <RadioButton x:Name="locWorldwideRadio" Content="worldwide" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,144,0,0" GroupName="locationRadio"/>
-            <RadioButton x:Name="locApproxRadio" Content="approximate Location" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,72,0,0" GroupName="locationRadio"/>
-            <CheckBox x:Name="seasionCB" Content="Season" HorizontalAlignment="Left" Margin="10,286,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.121,0.453" IsChecked="True"/>
-            <CheckBox x:Name="weatherconditionCB" Content="Weathercondition" HorizontalAlignment="Left" Margin="10,399,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.121,0.453" IsChecked="True"/>
-            <CheckBox x:Name="daytimeCB" Content="Daytime" HorizontalAlignment="Left" Margin="10,342,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.121,0.453" IsChecked="True"/>
-
-        </Grid>
+        
     </Grid>
 
 </phone:PhoneApplicationPage>

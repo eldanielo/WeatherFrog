@@ -12,9 +12,9 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True"
-    xmlns:src="clr-namespace:WeatherFrog.View">
+    xmlns:src="clr-namespace:WeatherFrog.Converter">
     <phone:PhoneApplicationPage.Resources>
-        <src:DateConverter x:Key="dateConverter"></src:DateConverter>
+        <src:UnixToDayConvert x:Key="dateConverter"></src:UnixToDayConvert>
         <src:IconConverter x:Key="iconConverter"></src:IconConverter>
 
     </phone:PhoneApplicationPage.Resources>

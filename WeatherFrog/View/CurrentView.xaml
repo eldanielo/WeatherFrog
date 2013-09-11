@@ -8,10 +8,11 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="300" d:DesignWidth="480"    
-    xmlns:src="clr-namespace:WeatherFrog.View">
+    xmlns:src="clr-namespace:WeatherFrog.Converter">
     <UserControl.Resources>
-        <src:DateConverter x:Key="dateConverter"></src:DateConverter>
+        <src:UnixToDayConvert x:Key="dateConverter"></src:UnixToDayConvert>
         <src:IconConverter x:Key="iconConverter"></src:IconConverter>
+        <src:DegreesConverter x:Key="degreesConverter"></src:DegreesConverter>
 
     </UserControl.Resources>   
     <Grid DataContext="{Binding currentStation}">
@@ -27,7 +28,7 @@
             </Grid.RowDefinitions>
             <Image Source="{Binding Path=forecast.currently.icon, Converter={StaticResource iconConverter}}" />
             <TextBlock HorizontalAlignment="Left" Grid.Column="1"  Text="{Binding Path=forecast.currently.summary}" Grid.Row="0"/>
-            <TextBlock Grid.Row="1"  Text="{Binding Path=forecast.currently.temperature}" Grid.ColumnSpan="2" TextWrapping="Wrap" FontSize="160" FontFamily="Yu Gothic" VerticalAlignment="Top">
+            <TextBlock Grid.Row="1"  Text="{Binding Path=forecast.currently.temperature, Converter={StaticResource degreesConverter}}" Grid.ColumnSpan="2" TextWrapping="Wrap" FontSize="160" FontFamily="Yu Gothic" VerticalAlignment="Top">
                     	
             </TextBlock>
         </Grid>

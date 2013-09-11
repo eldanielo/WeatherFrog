@@ -39,34 +39,6 @@ namespace WeatherFrog.View
         }
     }
 
-    public class DateConverter : IValueConverter
-    {
-        ConverterService converterService = ConverterService.getInstance();
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            if (converterService.unixToDate(double.Parse(value.ToString())).Date == DateTime.Now.Date)
-            {
-                return "Today";
-            }
-            return converterService.unixToDate(double.Parse(value.ToString())).DayOfWeek;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return null;
-        }
-    }
-    public class IconConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return "/Resources/Icons/" + ConverterService.getInstance().iconConvert(value.ToString());
-        }
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return null;
-        }
-
-       
-    }
+   
+   
 }

@@ -8,10 +8,12 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="300" d:DesignWidth="480"
-    xmlns:src="clr-namespace:WeatherFrog.View">
+    xmlns:src="clr-namespace:WeatherFrog.Converter"
+             >
     <UserControl.Resources>
-        <src:DateConverter x:Key="dateConverter"></src:DateConverter>
+        <src:UnixToDayConvert x:Key="dateConverter"></src:UnixToDayConvert>
         <src:IconConverter x:Key="iconConverter"></src:IconConverter>
+        <src:DegreesConverter x:Key="degreesConverter"></src:DegreesConverter>
 
     </UserControl.Resources>
     <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding currentStation}"  >
@@ -39,19 +41,19 @@
             <Rectangle Opacity ="1" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="2" />
 
             <TextBlock Text="Feels Like"   Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"  />
-            <TextBlock Name="feelsLikeText"   Text="{Binding Path=forecast.currently.apparentTemperature}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+            <TextBlock Name="feelsLikeText"   Text="{Binding Path=forecast.currently.apparentTemperature, Converter={StaticResource degreesConverter}}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <Rectangle Opacity ="0.5" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="2" Grid.Column="1" />
 
             <TextBlock Text="Humidity"   Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
-            <TextBlock Name="humidityText"    Text="{Binding Path=forecast.currently.humidity}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+            <TextBlock Name="humidityText"    Text="{Binding Path=forecast.currently.humidity}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
             <Rectangle Opacity ="0.5" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="3" Grid.Column="1" />
 
             <TextBlock Text="Visibility"   Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
-            <TextBlock Name="visibilityText"    Text="{Binding Path=forecast.currently.visibility}"  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,10,0,9" Width="84"/>
+            <TextBlock Name="visibilityText"    Text="{Binding Path=forecast.currently.visibility}"  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <Rectangle Opacity ="0.5" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="4" Grid.Column="1" />
 
             <TextBlock Text="UV Index"   Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
-            <TextBlock Name="uvIndexText"   Text="{Binding Path=forecast.currently.ozone}"  Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="27" Margin="0,10,0,9" Width="84"/>
+            <TextBlock Name="uvIndexText"   Text="{Binding Path=forecast.currently.ozone}"  Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
 
             <Rectangle Opacity ="0.5" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="5" Grid.ColumnSpan="2" />
 

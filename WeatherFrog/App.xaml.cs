@@ -118,6 +118,7 @@ namespace WeatherFrog
                 settings.Add("seasonSetting", true);
                 settings.Add("daytimeSetting", true);
                 settings.Add("weatherconditionSetting", true);
+                settings.Add("metricSetting", false);
             }
 
             
