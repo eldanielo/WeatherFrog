@@ -38,11 +38,14 @@ namespace WeatherFrog.ViewModelNamespace
         }
 
         public void addTestStations() {
-            /*
-            Station station = new Station { lat = "48.2083", lon = "16.3731"  ,name="Vienna"};
-            stations.Add(station);
-            ForecastService.getInstance().getForecast(station);
-             * */
+  
+            Station s = new Station { lat = "48.2083", lon = "16.3731"  ,name="Vienna"};
+            Station s1 = new Station { lat = "25.2083", lon = "16.3731", name = "Berlin" };
+            stations.Add(s);
+            stations.Add(s1);
+            ForecastService.getInstance().getForecast(s);
+            ForecastService.getInstance().getForecast(s1);
+     
         }
 
 

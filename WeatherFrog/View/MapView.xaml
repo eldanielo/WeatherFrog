@@ -20,7 +20,7 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Controls:WebBrowser Grid.Row="1"  Background="Transparent" Source="/HTML/leaflet.html" Name="browser" HorizontalAlignment="Stretch" IsScriptEnabled="True" Margin="-10,0,-10,-10" LoadCompleted="browser_LoadCompleted"   />
+            <Controls:WebBrowser Grid.Row="1"  Background="Transparent" Source="http://google.at" Name="browser" HorizontalAlignment="Stretch" IsScriptEnabled="True" Margin="-10,0,-10,-10" LoadCompleted="browser_LoadCompleted"   />
 
             <TextBlock  Text="Map" HorizontalAlignment="Left" VerticalAlignment="Center" ></TextBlock>
             <Rectangle Opacity ="1" Fill="White" Height="1" VerticalAlignment="Bottom" />

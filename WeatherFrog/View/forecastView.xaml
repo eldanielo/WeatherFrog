@@ -27,7 +27,7 @@
         <TextBlock  Text="Forecast" HorizontalAlignment="Left" VerticalAlignment="Center" ></TextBlock>
         <Rectangle Opacity ="1" Fill="White" Height="1" VerticalAlignment="Bottom" />
 
-        <ListBox x:Name="forecastListBox" SelectionChanged="ListboxSelectionChanged" Grid.Row="1" DataContext="{Binding currentStation}"  ItemsSource="{Binding forecast.daily.data}">
+        <ListBox x:Name="forecastListBox"  SelectionChanged="ListboxSelectionChanged" Grid.Row="1" DataContext="{Binding currentStation}"  ItemsSource="{Binding forecast.daily.data}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

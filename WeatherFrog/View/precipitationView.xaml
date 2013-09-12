@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="WeatherFrog.View.precipitationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="250" d:DesignWidth="480" xmlns:src="clr-namespace:WeatherFrog.Converter">
+    <UserControl.Resources>
+        <src:PrecipConverter x:Key="precipConverter"></src:PrecipConverter>
+        <src:UnixToTime x:Key="timeConverter"></src:UnixToTime>
+        <src:DoubleToPercent x:Key="probabilityConverter"></src:DoubleToPercent>
+
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Canvas></Canvas>
+        <Grid>
+        
+      
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+
+           
+
+            <TextBlock Text="perception"  HorizontalAlignment="Left" VerticalAlignment="Center"   />
+            <Rectangle Opacity="1" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="4" />
+            <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Margin="0,6,-196,0" Height="Auto" Name="imageScroll">
+                <ListBox  x:Name="precipListBoxs" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemsSource="{Binding forecast.hourly.data, Converter={StaticResource precipConverter}}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel.RenderTransform>
+                                    <TranslateTransform
+                                     X="0" />
+                                </StackPanel.RenderTransform>
+                            </StackPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock  Text="{Binding Path=precipProbability, Converter={StaticResource probabilityConverter}}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Image Source="/Resources/Icons/rain.png" Height="100" Width="100"></Image>
+                                <TextBlock Text="{Binding Path=time, Converter={StaticResource timeConverter}}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+
+           
+
+        </Grid>
+    </Grid>
+
+</UserControl>

@@ -265,6 +265,8 @@
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="50"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
 
 
                             </Grid.RowDefinitions>
@@ -285,54 +287,15 @@
                             <!-- windPressureWindow -->
                             <views:WindPressureView Height="200"  x:Name="windPressureView" Grid.Row="6" />
 
-                            <!--mapWindow     <views:MapView Height="250" x:Name="mapView"></views:MapView>
+                            <!--mapWindow    
 -->
-                        
+                            <views:MapView Height="250" Grid.Row="8" x:Name="mapView" ></views:MapView>
+
                             <!-- perceptionwindow-->
-                            <Grid Background="Black" Height="250"  Opacity="{StaticResource windowOpacity}" VerticalAlignment="Top" Grid.Row="8" >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="50"/>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition Height="3*"></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-
-                                </Grid.RowDefinitions>
-
-                                <TextBlock Text="perception"  Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"   />
-                                <Rectangle Opacity="1" Fill="White" Height="1" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="4" />
-
-                                <Image Source="Resources/Icons/rain.png" Grid.Row="2" Grid.Column="0"  />
-                                <Image Source="Resources/Icons/rain.png" Grid.Row="2" Grid.Column="1"  />
-                                <Image Source="Resources/Icons/rain.png" Grid.Row="2" Grid.Column="2"  />
-                                <Image Source="Resources/Icons/rain.png" Grid.Row="2" Grid.Column="3"  />
-
-
-                                <Rectangle Opacity="{StaticResource seperatorOpacity}" Fill="White" Width="1" VerticalAlignment="Stretch"  Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Left" />
-                                <Rectangle Opacity="{StaticResource seperatorOpacity}" Fill="White" Width="1" VerticalAlignment="Stretch"  Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Left" />
-                                <Rectangle Opacity="{StaticResource seperatorOpacity}" Fill="White" Width="1" VerticalAlignment="Stretch"  Grid.Row="2" Grid.Column="3"  HorizontalAlignment="Left" />
-
-                                <TextBlock  Text="18" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <TextBlock  Text="18" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <TextBlock  Text="18" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <TextBlock  Text="18" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
-
-                                <TextBlock  Text="morning" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <TextBlock  Text="morning" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <TextBlock  Text="morning" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <TextBlock  Text="morning" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
-
-
-
-                            </Grid>
+                            <views:precipitationView Height="250" Grid.Row="10"></views:precipitationView>
                             
                             <!-- sunmoonWindow -->
-                            <Grid Background="Black" Height="200"  Opacity="{StaticResource windowOpacity}" VerticalAlignment="Top" Grid.Row="10" >
+                            <Grid Background="Black" Height="200"  Opacity="{StaticResource windowOpacity}" VerticalAlignment="Top" Grid.Row="12" >
                                 <Grid.ColumnDefinitions>
 
                                 </Grid.ColumnDefinitions>

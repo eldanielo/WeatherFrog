@@ -21,9 +21,9 @@ namespace WeatherFrog.View
         public MapView()
         {
             InitializeComponent();
-            vm = ViewModel.getInstance();
+          //  vm = ViewModel.getInstance();
            
-            this.Loaded += new RoutedEventHandler(MapView_Loaded);
+          //  this.Loaded += new RoutedEventHandler(MapView_Loaded);
         }
 
         private void MapView_Loaded(object sender, RoutedEventArgs e)
@@ -42,9 +42,9 @@ namespace WeatherFrog.View
   
         private void browser_LoadCompleted(object sender, NavigationEventArgs e)
         {
-            Debug.WriteLine("browser loaded complete");
-            Station curr = ViewModelNamespace.ViewModel.getInstance().currentStation;
-            browser.InvokeScript("setPos", new string[] { curr.lat, curr.lon });
+          //  Debug.WriteLine("browser loaded complete");
+        //    Station curr = ViewModelNamespace.ViewModel.getInstance().currentStation;
+     //       browser.InvokeScript("setPos", new string[] { curr.lat, curr.lon });
 
 
         }

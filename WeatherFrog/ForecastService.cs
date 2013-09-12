@@ -92,6 +92,8 @@ namespace WeatherFrog
 
     public class Datum
     {
+
+
         public string time { get; set; }
         public string summary { get; set; }
         public string icon { get; set; }
@@ -114,7 +116,25 @@ namespace WeatherFrog
     {
         public string summary { get; set; }
         public string icon { get; set; }
-        public List<Datum> data { get; set; }
+        
+        private List<Datum> _data;
+        public List<Datum> data
+        {
+            get { return _data; }
+            set
+            {
+                if (value != _data)
+                {
+                    _data = value;
+                    for (int i = 0; i < value.Count; i += 4) {
+                        dataShort.Add(value[i]);
+                    }
+                
+                }
+            }
+        }
+
+        public List<Datum> dataShort = new List<Datum>();
     }
 
     public class Datum2
@@ -156,7 +176,8 @@ namespace WeatherFrog
                 if (value != _temperatureMin)
                 {
                     _temperatureMin = value;
-                    temperatureMinCelsius = String.Format("{0:0.00}", (Double.Parse(value.ToString()) - 32) / 1.8) + "°C";
+                    //@TODO
+                 //   temperatureMinCelsius = String.Format("{0:0.00}", (Double.Parse(value.ToString()) - 32) / 1.8) + "°C";
                    
                 }
             }
@@ -177,7 +198,7 @@ namespace WeatherFrog
                 if (value != _temperatureMax)
                 {
                     _temperatureMax = value;
-                    temperatureMaxCelsius = String.Format("{0:0.00}", (Double.Parse(value.ToString()) - 32) / 1.8) + "°C";
+                   // temperatureMaxCelsius = String.Format("{0:0.00}", (Double.Parse(value.ToString()) - 32) / 1.8) + "°C";
 
                 }
             }
@@ -205,6 +226,8 @@ namespace WeatherFrog
         public string summary { get; set; }
         public string icon { get; set; }
         public List<Datum2> data { get; set; }
+       
+
     }
 
     public class ForecastData
