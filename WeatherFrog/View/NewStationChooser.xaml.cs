@@ -53,7 +53,7 @@ namespace WeatherFrog.View
         private void locationSelected(object sender, SelectionChangedEventArgs e)
         {
             Debug.WriteLine("locatonSelected");
-             p = (((ListBox)sender).SelectedItem) as Prediction;
+             p = (((LongListSelector)sender).SelectedItem) as Prediction;
              if (p == null)
                  return;
             googlePlacesService.getDetail(p.reference);
@@ -63,7 +63,11 @@ namespace WeatherFrog.View
 
         private void addStation(string lat, string lon, string name,string sanityReference)
         {
-
+            Debug.WriteLine("adding Station");
+            if (p.reference != sanityReference) {
+                Debug.WriteLine("sanitize");
+                return;
+            }
           
             Station station = new Station();
             station.lat = lat;

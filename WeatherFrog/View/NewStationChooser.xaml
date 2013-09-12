@@ -23,14 +23,14 @@
 
         <TextBlock Text="Add a new Location" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <TextBox Grid.Row="1" Height="80" x:Name="inputText" TextChanged="textChanged" />
-        <ListBox  Grid.Row="2" x:Name="locationsBox" SelectionChanged="locationSelected" ItemsSource="{Binding locations}">
-            <ListBox.ItemTemplate>
+        <phone:LongListSelector  Grid.Row="2" x:Name="locationsBox" SelectionChanged="locationSelected" ItemsSource="{Binding locations}">
+            <phone:LongListSelector.ItemTemplate>
             <DataTemplate>
                 <TextBlock  Text="{Binding description}"></TextBlock>
 
             </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+            </phone:LongListSelector.ItemTemplate>
+        </phone:LongListSelector>
 
     </Grid>
 
