@@ -121,6 +121,9 @@
     <Compile Include="View\MapPage.xaml.cs">
       <DependentUpon>MapPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MapView.xaml.cs">
+      <DependentUpon>MapView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\NewStationChooser.xaml.cs" />
     <Compile Include="View\settings.xaml.cs">
       <DependentUpon>settings.xaml</DependentUpon>
@@ -165,6 +168,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\MapView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\NewStationChooser.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -195,6 +202,10 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="HTML\leaflet.css" />
+    <Content Include="HTML\leaflet.ie.css" />
+    <Content Include="View\gmaps.html" />
+    <Content Include="HTML\leaflet.html" />
     <Content Include="View\test.html" />
     <Resource Include="Assets\testimg.jpg" />
     <Content Include="README_FIRST.txt" />

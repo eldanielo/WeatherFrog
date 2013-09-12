@@ -119,6 +119,13 @@ namespace WeatherFrog
                 settings.Add("daytimeSetting", true);
                 settings.Add("weatherconditionSetting", true);
                 settings.Add("metricSetting", false);
+                settings.Add("tempLayer", false);
+                settings.Add("windLayer", false);
+                settings.Add("pressureLayer", false);
+                settings.Add("precipitationLayer", false);
+                settings.Add("stationsLayer", true);
+                settings.Add("cloudLayer", true);
+            
             }
 
             

@@ -9,43 +9,109 @@
 </body>
 
 <script type="text/javascript">
-   
-
+    var map;
+    var mapnik, stations, city, cloud, precipitation, pressure, temp, windspeed;
+    var position;
     function init() {
-        var map;
-
+       
         //Center of map
         var lat = 51.5112139; // <--- some dynamic location
         var lon = -0.1198244; //<--- some dynamic location
-        var map = new OpenLayers.Map("basicMap");
+        map = new OpenLayers.Map("basicMap");
         var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
         var toProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
-        var position = new OpenLayers.LonLat(lon, lat).transform(fromProjection, toProjection);
-    
+         position = new OpenLayers.LonLat(lon, lat).transform(fromProjection, toProjection);
         // Create overlays
         //  OSM
-        var mapnik = new OpenLayers.Layer.OSM();
+         mapnik = new OpenLayers.Layer.OSM();
         // Stations
-        var stations = new OpenLayers.Layer.Vector.OWMStations("Stations");
+         stations = new OpenLayers.Layer.Vector.OWMStations("Stations");
         // Current weather
-        var city = new OpenLayers.Layer.Vector.OWMWeather("Weather");
-        //Addind maps
-        map.addLayers([mapnik, city]);
-        map.setCenter(position, 10);
-        
-       
-    }
+         city = new OpenLayers.Layer.Vector.OWMWeather("Weather", {
+             isBaseLayer: false,
+             opacity: 0.7,
+             sphericalMercator: true
+         });
 
-    function setStats(lat, lon) {
+          cloud = new OpenLayers.Layer.XYZ(
+         "clouds",
+         "http://${s}.tile.openweathermap.org/map/clouds/${z}/${x}/${y}.png",
+         {
+             isBaseLayer: false,
+             opacity: 0.7,
+             sphericalMercator: true
+         }
+           );
+
+
+         precipitation = new OpenLayers.Layer.XYZ(
+             "precipitation",
+             "http://${s}.tile.openweathermap.org/map/precipitation/${z}/${x}/${y}.png",
+             {
+                 isBaseLayer: false,
+                 opacity: 0.7,
+                 sphericalMercator: true
+             }
+         );
+         pressure = new OpenLayers.Layer.XYZ(
+             "pressure",
+             "http://${s}.tile.openweathermap.org/map/pressure/${z}/${x}/${y}.png",
+             {
+                 isBaseLayer: false,
+                 opacity: 0.7,
+                 sphericalMercator: true
+             }
+         );
+         temp = new OpenLayers.Layer.XYZ(
+            "temp",
+            "http://${s}.tile.openweathermap.org/map/temp/${z}/${x}/${y}.png",
+            {
+                isBaseLayer: false,
+                opacity: 0.7,
+                sphericalMercator: true
+            }
+        );
+        windspeed = new OpenLayers.Layer.XYZ(
+            "wind",
+            "http://${s}.tile.openweathermap.org/map/wind/${z}/${x}/${y}.png",
+            {
+                isBaseLayer: false,
+                opacity: 0.7,
+                sphericalMercator: true
+            }
+        );
+
+     
+
+        map.addLayers([mapnik]);
+  //      map.addLayer(temp);
+        temp.setMap(map);
+        stations.setMap(map);
+        //Addind maps
+         map.setCenter(position, 5);
+         map.zoomToMaxExtent();
+        
+        
+    }   
+
+    function setPos(lat, lon) {
         
         var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
         var toProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
         var position = new OpenLayers.LonLat(lon, lat).transform(fromProjection, toProjection);
-        var m = new OpenLayers.Map("basicMap");
-        m.setCenter(position, 10);
+        map.setCenter(position, 5);
     
     }
    
+    function togglePrecipitationOn() {
+       map.addLayers([temp]);
+       map.setCenter(position, 1);
+        
+     
+    }
+    function togglePrecipitationOff() {
+        map.removeLayer(city);
+    }
     
 </script>
 </html>

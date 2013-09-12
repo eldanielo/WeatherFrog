@@ -285,7 +285,9 @@
                             <!-- windPressureWindow -->
                             <views:WindPressureView Height="200"  x:Name="windPressureView" Grid.Row="6" />
 
-
+                            <!--mapWindow     <views:MapView Height="250" x:Name="mapView"></views:MapView>
+-->
+                        
                             <!-- perceptionwindow-->
                             <Grid Background="Black" Height="250"  Opacity="{StaticResource windowOpacity}" VerticalAlignment="Top" Grid.Row="8" >
                                 <Grid.ColumnDefinitions>

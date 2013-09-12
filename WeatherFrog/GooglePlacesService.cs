@@ -52,7 +52,7 @@ namespace WeatherFrog
        
 
         }
-        public delegate void GotPlaceDetail(string lat, string lon, string sanityReference);
+        public delegate void GotPlaceDetail(string lat, string lon, string name, string sanityReference);
         public event GotPlaceDetail gotPlaceDetail;
         public async void getDetail(String reference)
         {
@@ -67,7 +67,7 @@ namespace WeatherFrog
              GoogleDetail data = JsonConvert.DeserializeObject<GoogleDetail>(googleResult);
             if (data.status == "OK")
             {
-                gotPlaceDetail(data.result.geometry.location.lat.ToString().Replace(",", "."), data.result.geometry.location.lng.ToString().Replace(",", "."), reference); 
+                gotPlaceDetail(data.result.geometry.location.lat.ToString().Replace(",", "."), data.result.geometry.location.lng.ToString().Replace(",", "."), data.result.address_components.First<AddressComponent>().long_name, reference); 
             }
             else
             {

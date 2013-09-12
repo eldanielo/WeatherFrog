@@ -22,10 +22,13 @@ namespace WeatherFrog.View
         private GooglePlacesService googlePlacesService = GooglePlacesService.getInstance();
         ForecastService forecastService = ForecastService.getInstance();
         ViewModel vm = ViewModel.getInstance();
+        
         public NewStationChooser()
         {
             InitializeComponent();
-           
+            googlePlacesService.gotPlaceDetail -= new GooglePlacesService.GotPlaceDetail(addStation);
+            googlePlacesService.gotPlaceDetail += new GooglePlacesService.GotPlaceDetail(addStation);
+   
            
             locations = new ObservableCollection<Prediction>();
             locations.Add(new Prediction());
@@ -49,25 +52,24 @@ namespace WeatherFrog.View
         Prediction p;
         private void locationSelected(object sender, SelectionChangedEventArgs e)
         {
+            Debug.WriteLine("locatonSelected");
              p = (((ListBox)sender).SelectedItem) as Prediction;
              if (p == null)
                  return;
             googlePlacesService.getDetail(p.reference);
-            googlePlacesService.gotPlaceDetail += new GooglePlacesService.GotPlaceDetail(addStation);
-   
+          
             
         }
 
-        private void addStation(string lat, string lon, string sanityReference)
+        private void addStation(string lat, string lon, string name,string sanityReference)
         {
-            if (p.reference != sanityReference)
-                return;
 
+          
             Station station = new Station();
             station.lat = lat;
             station.lon = lon;
-           
-            station.name = p.terms.First<Term>().value;
+
+            station.name = name;
             vm.stations.Add(station);
             forecastService.getForecast(station);
             NavigationService.Navigate(new Uri("/View/MainPage.xaml", UriKind.Relative));

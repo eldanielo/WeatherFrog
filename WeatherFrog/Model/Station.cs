@@ -22,6 +22,9 @@ namespace WeatherFrog.Model
             locSetting = "exact";
         }
 
+        public delegate void gotLoc();
+        public event gotLoc gotlocation;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged(string propertyName)
@@ -61,7 +64,7 @@ namespace WeatherFrog.Model
                 if (value != _lat)
                 {
                     _lat = value;
-                   // this.PropertyChanged(this, new PropertyChangedEventArgs("lat"));
+                    // this.PropertyChanged(this, new PropertyChangedEventArgs("lat"));
                 }
             }
         }
