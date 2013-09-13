@@ -109,7 +109,6 @@ namespace WeatherFrog
           */
         }
 
-
         private void loadSettings() {
             if (!settings.Contains("initstart")) {
                 

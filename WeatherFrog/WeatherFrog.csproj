@@ -123,6 +123,9 @@
       <DependentUpon>MapView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NewStationChooser.xaml.cs" />
+    <Compile Include="View\PrecipDetailPage.xaml.cs">
+      <DependentUpon>PrecipDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\precipitationView.xaml.cs">
       <DependentUpon>precipitationView.xaml</DependentUpon>
     </Compile>
@@ -176,6 +179,10 @@
     <Page Include="View\NewStationChooser.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PrecipDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\precipitationView.xaml">
       <SubType>Designer</SubType>

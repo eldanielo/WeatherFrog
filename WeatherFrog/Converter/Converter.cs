@@ -32,7 +32,7 @@ namespace WeatherFrog.Converter
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             List<Datum> shortPrecip = new List<Datum>();
-            for (int i = 0; i < ((List<Datum>)value).Count; i += 7)
+            for (int i = 0; i < ((List<Datum>)value).Count; i += 5)
             {
                 shortPrecip.Add(((List<Datum>)value)[i]);
             }
@@ -104,6 +104,8 @@ namespace WeatherFrog.Converter
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
            int hour = converterService.unixToDate(double.Parse(value.ToString())).Hour ;
+           if (converterService.unixToDate(double.Parse(value.ToString())).Hour == DateTime.Now.Hour)
+               return "now";
             if((bool)IsolatedStorageSettings.ApplicationSettings["metricSetting"])
                 return hour + ":00";
             else {

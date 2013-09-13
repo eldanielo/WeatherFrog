@@ -14,7 +14,7 @@
         <src:DoubleToPercent x:Key="probabilityConverter"></src:DoubleToPercent>
 
     </UserControl.Resources>
-    <Grid x:Name="LayoutRoot">
+    <Grid x:Name="LayoutRoot" Tap="LayoutRoot_Tap">
         <Canvas></Canvas>
         <Grid>
         

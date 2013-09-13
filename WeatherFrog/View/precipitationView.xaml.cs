@@ -24,6 +24,12 @@ namespace WeatherFrog.View
           
         }
 
+        private void LayoutRoot_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/View/PrecipDetailPage.xaml", UriKind.Relative));
+       
+        }
+
         
     }
 }

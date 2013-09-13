@@ -117,24 +117,8 @@ namespace WeatherFrog
         public string summary { get; set; }
         public string icon { get; set; }
         
-        private List<Datum> _data;
-        public List<Datum> data
-        {
-            get { return _data; }
-            set
-            {
-                if (value != _data)
-                {
-                    _data = value;
-                    for (int i = 0; i < value.Count; i += 4) {
-                        dataShort.Add(value[i]);
-                    }
-                
-                }
-            }
-        }
-
-        public List<Datum> dataShort = new List<Datum>();
+        public List<Datum> data{get;set;}
+       
     }
 
     public class Datum2
