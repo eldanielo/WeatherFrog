@@ -75,6 +75,7 @@ namespace WeatherFrog.View
 
             station.name = name;
             vm.stations.Add(station);
+            googlePlacesService.getTimeZone(station);
             forecastService.getForecast(station);
             NavigationService.Navigate(new Uri("/View/MainPage.xaml", UriKind.Relative));
 

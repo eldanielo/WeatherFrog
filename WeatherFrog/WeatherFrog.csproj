@@ -102,6 +102,7 @@
     <Compile Include="LocationService.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="StateUtilities.cs" />
+    <Compile Include="TimeTicker.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="View\CurrentView.xaml.cs">
       <DependentUpon>CurrentView.xaml</DependentUpon>

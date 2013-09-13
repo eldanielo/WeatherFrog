@@ -91,6 +91,17 @@ namespace WeatherFrog
             }
             return "error";
         }
+
+        public string timeToImperial(DateTime time) {
+
+            string newtime;
+            if (time.Hour > 12)
+            {
+                return time.Hour-12+":"+time.Minute+ " pm";
+            }
+
+            return time.Hour+":"+time.Minute+" am" ; 
+        }
        
     }
 }

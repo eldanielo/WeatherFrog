@@ -14,9 +14,10 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False"
     xmlns:System="clr-namespace:System;assembly=mscorlib"
-    xmlns:views="clr-namespace:WeatherFrog.View">
+    xmlns:views="clr-namespace:WeatherFrog.View"
+      xmlns:conv="clr-namespace:WeatherFrog.Converter">
     <phone:PhoneApplicationPage.Resources>
-
+        <conv:LocalTimeConvert x:Key="localTimeConverter"></conv:LocalTimeConvert>
         <System:Double x:Key="seperatorOpacity">0.5</System:Double>
         <System:Double x:Key="windowOpacity">0.3</System:Double>
 
@@ -241,9 +242,10 @@
             <phone:Pivot.HeaderTemplate>
                 <DataTemplate>
 
-                    <Grid Height="100" VerticalAlignment="Top" Width="480" >
-                        <TextBlock x:Name="mainLocText" TextWrapping="Wrap"  Text="{Binding Path=name}" FontSize="48" TextAlignment="Center" Margin="0,-10,0,0"/>
-                    </Grid>
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap"  Text="{Binding Path=name}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        <TextBlock Text="{Binding Path=localTime, Converter={StaticResource localTimeConverter}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></TextBlock>
+                    </StackPanel>
 
                 </DataTemplate>
             </phone:Pivot.HeaderTemplate>

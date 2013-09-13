@@ -9,6 +9,7 @@ using NLog;
 using System.Net.Http;
 using Windows.Devices.Geolocation;
 using Newtonsoft.Json;
+using WeatherFrog.Model;
 
 
 namespace WeatherFrog
@@ -61,6 +62,7 @@ namespace WeatherFrog
             string request = "https://maps.googleapis.com/maps/api/place/details/json?reference=" +
                 reference +
                 "&sensor=false" +
+                "&extensions=utc_offset" +
                 "&key=" + apiKey;
             Debug.WriteLine("request " + request);
             string googleResult = await client.GetStringAsync(request);
@@ -76,6 +78,18 @@ namespace WeatherFrog
           
         
 
+        }
+
+        public async void getTimeZone(Station station) { 
+
+             HttpClient client = new HttpClient();
+            Debug.WriteLine("getting timezone" );
+            string request = "https://maps.googleapis.com/maps/api/place/details/json?laction=" +
+                station.lat+ ","+ station.lon +
+                "&sensor=true_or_false" ;
+            Debug.WriteLine("request " + request);
+            string googleResult = await client.GetStringAsync(request);
+            
         }
 
 

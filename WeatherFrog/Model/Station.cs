@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace WeatherFrog.Model
 {
@@ -20,7 +21,24 @@ namespace WeatherFrog.Model
         public Station() {
             id = "" + count++;
             locSetting = "exact";
+            
         }
+
+
+        private DateTime _localTime;
+        public DateTime localTime
+        {
+            get { return _localTime; }
+            set
+            {
+                if (value != _localTime)
+                {
+                    _localTime =  value;
+                    this.RaisePropertyChanged("localTime");
+                }
+            }
+        }
+
 
         public delegate void gotLoc();
         public event gotLoc gotlocation;
@@ -107,11 +125,16 @@ namespace WeatherFrog.Model
                     _forecast = value;
                     icon = converter.iconConvert(forecast.currently.icon);
                     Debug.WriteLine("ICON" + icon);
+
+                    localTime =  DateTime.UtcNow.AddHours(_forecast.offset);
+                   
+                  
                     this.RaisePropertyChanged("forecast");
                 }
             }
         }
-       
+
+      
         private ImageBrush _backDropImg;
         public ImageBrush backDropImg
         {

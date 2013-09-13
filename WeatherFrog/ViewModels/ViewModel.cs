@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.IO.IsolatedStorage;
 using WeatherFrog.Model;
 using System.ComponentModel;
+using System.Windows.Threading;
+using System.Diagnostics;
 
 
 namespace WeatherFrog.ViewModelNamespace
@@ -18,8 +20,26 @@ namespace WeatherFrog.ViewModelNamespace
 
         private ViewModel()
         {
-            
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMinutes(1);
+            timer.Tick += timer_Tick;
+            timer.Start();
         }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            Debug.WriteLine("timerTick");
+         
+            foreach(Station s in stations){
+                if (s.localTime != null) {
+                    s.localTime = s.localTime.AddMinutes(1);
+                }    
+               
+            }
+           
+          
+        }
+       
 
         public static ViewModel getInstance()
         {

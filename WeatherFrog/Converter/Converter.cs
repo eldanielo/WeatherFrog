@@ -142,4 +142,29 @@ namespace WeatherFrog.Converter
         }
 
     }
+
+    public class LocalTimeConvert : System.Windows.Data.IValueConverter
+    {
+
+        ConverterService converterService = ConverterService.getInstance();
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            DateTime time = (DateTime)value;
+            if ((bool)IsolatedStorageSettings.ApplicationSettings["metricSetting"])
+            {
+                return time.Hour + ":" + time.Minute;
+            }
+            else {
+                return converterService.timeToImperial(time);
+            }
+
+           
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return null;
+        }
+
+    }
 }

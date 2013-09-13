@@ -219,7 +219,7 @@ namespace WeatherFrog
         public string latitude { get; set; }
         public string longitude { get; set; }
         public string timezone { get; set; }
-        public string offset { get; set; }
+        public double offset { get; set; }
         public Currently currently { get; set; }
         public Hourly hourly { get; set; }
         public Daily daily { get; set; }
