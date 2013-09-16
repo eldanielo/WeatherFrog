@@ -43,9 +43,15 @@ namespace WeatherFrog
             string url = "https://api.forecast.io/forecast/" + apiKey + 
                 "/" + station.lat +
                 "," + station.lon;
-
-
-            string forecastResult = await client.GetStringAsync(url);
+            string forecastResult =null;
+            try
+            {
+                forecastResult = await client.GetStringAsync(url);
+            }
+            catch (HttpRequestException ex) {
+                Debug.WriteLine(ex.Message);
+                return;
+            }
             Debug.WriteLine("forecast response: " + forecastResult);
         
          ForecastData data = JsonConvert.DeserializeObject<ForecastData>(removeFlags(forecastResult));

@@ -25,6 +25,7 @@
     <ValidateXaml>true</ValidateXaml>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <ExpressionBlendVersion>12.0.40612.10</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -140,6 +141,9 @@
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Model\Station.cs" />
+    <Compile Include="View\sunView.xaml.cs">
+      <DependentUpon>sunView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\WindPressureView.xaml.cs">
       <DependentUpon>WindPressureView.xaml</DependentUpon>
     </Compile>
@@ -193,6 +197,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\sunView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\WindPressureView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -217,13 +225,12 @@
     </Content>
     <Content Include="HTML\leaflet.css" />
     <Content Include="HTML\leaflet.ie.css" />
-    <Content Include="View\gmaps.html" />
     <Content Include="HTML\leaflet.html" />
-    <Content Include="View\test.html" />
     <Resource Include="Assets\testimg.jpg" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Resources\Icons\cloudy.png" />
     <Content Include="Resources\Icons\haze.png" />
+    <Content Include="Resources\Icons\moon.png" />
     <Content Include="Resources\Icons\partly_cloudy.png" />
     <Content Include="Resources\Icons\pinwheel_large.png" />
     <Content Include="Resources\Icons\pinwheel_large_white.png" />
@@ -266,6 +273,7 @@
     <Reference Include="AmCharts.Windows.QuickCharts.WP">
       <HintPath>..\packages\amChartsQuickCharts.1.1\lib\sl3-wp\AmCharts.Windows.QuickCharts.WP.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Interactions" />
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
@@ -285,6 +293,7 @@
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Interactivity" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />

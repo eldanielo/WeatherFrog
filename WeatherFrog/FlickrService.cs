@@ -112,9 +112,15 @@ namespace WeatherFrog
             Debug.WriteLine("downloading img..." + station.ToString());
 
             Debug.WriteLine("flickrRequest " + baseRequest);
-
-
-            string flickrResult = await client.GetStringAsync(baseRequest);
+            string flickrResult;
+            try
+            {
+flickrResult= await client.GetStringAsync(baseRequest);
+            }
+            catch (HttpRequestException ex) {
+                Debug.WriteLine(ex);
+                return;
+            }
             Debug.WriteLine("flickr response: " + flickrResult);
             FlickrData data = JsonConvert.DeserializeObject<FlickrData>(flickrResult);
           

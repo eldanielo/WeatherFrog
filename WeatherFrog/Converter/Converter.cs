@@ -132,8 +132,9 @@ namespace WeatherFrog.Converter
         ConverterService converterService = ConverterService.getInstance();
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-
-            return Double.Parse(value.ToString()) * 100 + "%";
+            //@TODO
+            return value;
+           // return Double.Parse(value.ToString()) * 100 + "%";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

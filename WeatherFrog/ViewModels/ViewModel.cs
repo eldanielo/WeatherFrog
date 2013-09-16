@@ -29,7 +29,7 @@ namespace WeatherFrog.ViewModelNamespace
         private void timer_Tick(object sender, EventArgs e)
         {
             Debug.WriteLine("timerTick");
-         
+            
             foreach(Station s in stations){
                 if (s.localTime != null) {
                     s.localTime = s.localTime.AddMinutes(1);
